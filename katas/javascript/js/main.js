@@ -1,13 +1,15 @@
 /*
-Given a non-empty array of integers, return the result of multiplying the values together in order. Example:
+Write a function that takes an array of words and smashes them together into a sentence and returns the sentence. You can ignore any need to sanitize words or add punctuation, but you should add spaces between each word. Be careful, there shouldn't be a space at the beginning or the end of the sentence!
 
-[1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24
+Example
+['hello', 'world', 'this', 'is', 'great']  =>  'hello world this is great'
+words = ['hello', 'world', 'this', 'is', 'great']
+
  */
 
-
-function resolve(arr){
-    return arr.reduce((acc, cur) => acc * cur)
+function join(arr) {
+    return arr.join(' ')
 }
 
 
-console.log(resolve([1, 2, 3, 4]))
+console.log(join(['hello', 'world', 'this', 'is', 'great']))
