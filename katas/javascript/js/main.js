@@ -1,15 +1,12 @@
 /*
-Write a function that takes an array of words and smashes them together into a sentence and returns the sentence. You can ignore any need to sanitize words or add punctuation, but you should add spaces between each word. Be careful, there shouldn't be a space at the beginning or the end of the sentence!
+A hero is on his way to the castle to complete his mission. However, he's been told that the castle is surrounded with a couple of powerful dragons! each dragon takes 2 bullets to be defeated, our hero has no idea how many bullets he should carry.. Assuming he's gonna grab a specific given number of bullets and move forward to fight another specific given number of dragons, will he survive?
 
-Example
-['hello', 'world', 'this', 'is', 'great']  =>  'hello world this is great'
-words = ['hello', 'world', 'this', 'is', 'great']
-
+Return true if yes, false otherwise :)
  */
 
-function join(arr) {
-    return arr.join(' ')
+function quest(bullets, dragons) {
+    return bullets >= dragons * 2
 }
 
 
-console.log(join(['hello', 'world', 'this', 'is', 'great']))
+console.log(quest(3,6))
