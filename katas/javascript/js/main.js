@@ -1,20 +1,37 @@
-
 /*
-There was a test in your class and you passed it. Congratulations!
+Given an array of integers, find the one that appears an odd number of times.
 
-But you're an ambitious person. You want to know if you're better than the average student in your class.
+There will always be only one integer that appears an odd number of times.
 
-You receive an array with your peers' test scores. Now calculate the average and compare your score!
-
-Return true if you're better, else false!
-
-Note:
-Your points are not included in the array of your class's points. Do not forget them when calculating the average score!
+Examples
+[7] should return 7, because it occurs 1 time (which is odd).
+[0] should return 0, because it occurs 1 time (which is odd).
+[1,1,2] should return 2, because it occurs 1 time (which is odd).
+[0,1,0,1,0] should return 0, because it occurs 3 times (which is odd).
+[1,2,2,3,3,3,4,3,3,3,2,2,1] should return 4, because it appears 1 time (which is odd).
  */
 
-function betterThanAverage(classPoints, yourPoints) {
-    let average = classPoints.reduce((acc, x) => acc + x, 0) / classPoints.length;
-    return average < yourPoints;
+// My solution
+function appearance(arr) {
+   let result = arr.reduce((acc, cur) => {
+      if (acc[cur]) {
+         acc[cur]++
+      } else {
+         acc[cur] = 1
+      }
+      return acc
+   }, {})
+
+   for (const resultKey in result) {
+      if (result[resultKey] % 2 !== 0) {
+         return parseInt(resultKey)
+      }
+   }
 }
 
-console.log(betterThanAverage([2, 3], 5))
+console.log(appearance([7]))
+
+/*
+Better solution using XOR:
+   const findOdd = (xs) => xs.reduce((a, b) => a ^ b);
+ */
