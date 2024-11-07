@@ -1,12 +1,20 @@
-/*
-A hero is on his way to the castle to complete his mission. However, he's been told that the castle is surrounded with a couple of powerful dragons! each dragon takes 2 bullets to be defeated, our hero has no idea how many bullets he should carry.. Assuming he's gonna grab a specific given number of bullets and move forward to fight another specific given number of dragons, will he survive?
 
-Return true if yes, false otherwise :)
+/*
+There was a test in your class and you passed it. Congratulations!
+
+But you're an ambitious person. You want to know if you're better than the average student in your class.
+
+You receive an array with your peers' test scores. Now calculate the average and compare your score!
+
+Return true if you're better, else false!
+
+Note:
+Your points are not included in the array of your class's points. Do not forget them when calculating the average score!
  */
 
-function quest(bullets, dragons) {
-    return bullets >= dragons * 2
+function betterThanAverage(classPoints, yourPoints) {
+    let average = classPoints.reduce((acc, x) => acc + x, 0) / classPoints.length;
+    return average < yourPoints;
 }
 
-
-console.log(quest(3,6))
+console.log(betterThanAverage([2, 3], 5))
