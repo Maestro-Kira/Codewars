@@ -1,37 +1,10 @@
 /*
-Given an array of integers, find the one that appears an odd number of times.
+In this kata you will create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
 
-There will always be only one integer that appears an odd number of times.
-
-Examples
-[7] should return 7, because it occurs 1 time (which is odd).
-[0] should return 0, because it occurs 1 time (which is odd).
-[1,1,2] should return 2, because it occurs 1 time (which is odd).
-[0,1,0,1,0] should return 0, because it occurs 3 times (which is odd).
-[1,2,2,3,3,3,4,3,3,3,2,2,1] should return 4, because it appears 1 time (which is odd).
  */
 
-// My solution
-function appearance(arr) {
-   let result = arr.reduce((acc, cur) => {
-      if (acc[cur]) {
-         acc[cur]++
-      } else {
-         acc[cur] = 1
-      }
-      return acc
-   }, {})
-
-   for (const resultKey in result) {
-      if (result[resultKey] % 2 !== 0) {
-         return parseInt(resultKey)
-      }
-   }
+function filterList (arr) {
+   return arr.filter((item)=> typeof item === 'number')
 }
 
-console.log(appearance([7]))
-
-/*
-Better solution using XOR:
-   const findOdd = (xs) => xs.reduce((a, b) => a ^ b);
- */
+console.log(  filterList ([1,2,3,4,5,6,7,8,9,10 , 'a', 'b', 'c']));
