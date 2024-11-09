@@ -1,10 +1,15 @@
 /*
-In this kata you will create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
-
+In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
  */
 
-function filterList (arr) {
-   return arr.filter((item)=> typeof item === 'number')
+function sortArray(a) {
+   let sortedArray = a.split(' ').map(Number);
+   let min = Math.min(...sortedArray).toString();
+   let max = Math.max(...sortedArray).toString();
+   let result = [max, min];
+   return result.join(' ');
 }
 
-console.log(  filterList ([1,2,3,4,5,6,7,8,9,10 , 'a', 'b', 'c']));
+
+console.log(sortArray("1 2 3 4 5"));
+console.log(sortArray("-100 2 3 4 55 77"));
