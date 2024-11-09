@@ -1,15 +1,15 @@
 /*
-In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
+Your goal in this kata is to implement a difference function, which subtracts one list from another and returns the result.
+
+It should remove all values from list a, which are present in list b keeping their order.
+
+arrayDiff([1,2],[1]) == [2]
+If a value is present in b, all of its occurrences must be removed from the other:
+
+arrayDiff([1,2,2,2,3],[2]) == [1,3]
  */
 
-function sortArray(a) {
-   let sortedArray = a.split(' ').map(Number);
-   let min = Math.min(...sortedArray).toString();
-   let max = Math.max(...sortedArray).toString();
-   let result = [max, min];
-   return result.join(' ');
+function diff(arr1, arr2) {
+   return arr1.filter(function (item) {return !arr2.includes(item)})
 }
-
-
-console.log(sortArray("1 2 3 4 5"));
-console.log(sortArray("-100 2 3 4 55 77"));
+console.log(diff([1, 2, 3, 4,4,4, 5], [3,5]));
