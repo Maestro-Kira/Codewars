@@ -1,13 +1,11 @@
-/*
-Build a function that returns an array of integers from n to 1 where n>0.
+function countBy(x, n) {
+    let z = [];
+    for ( let i = 1; i <= n; i++){
+        let result = i * x
+        z.push(result)
+    }
+    return z;
+}
 
-Example : n=5 --> [5,4,3,2,1]
- */
-
-const reverseSeq = n => {
-    let result =[]
-    for (let i = n; i > 0; i--) {
-    result.push(i)
-    } return result
-};
-console.log(reverseSeq(5));
+console.log(countBy(1, 10))
+console.log(countBy(2, 5))
