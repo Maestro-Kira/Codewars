@@ -1,7 +1,23 @@
-# Codewars Kata Solutions
+# Codewars Solutions
 
-This repository contains my solutions to Codewars katas. The code for each solution is stored in the file `codewars-solutions.js`. Every time I complete a new kata, I overwrite the file with the new solution and commit it to the repository. Previous solutions can be found in the commit history.
+Welcome to my collection of solutions to Codewars katas! This repository is organized to showcase my problem-solving skills and coding proficiency. Each solution is saved individually and grouped by programming language.
 
-## How to view my solutions:
-1. Check the commit history to see a list of solved katas.
-2. You can view each solution by looking at the individual commits.
+## Repository Structure
+`/javascript/js`: Contains all JavaScript solutions.
+
+## How to Navigate
+1. Choose a folder for the programming language you're interested in.
+2. Open the corresponding file to view the kata description and my solution.
+
+## Example
+### File: `is-square-number.js`
+#### Kata Title: "Check if a Number is a Perfect Square"
+#### Description:
+Given an integer, determine whether it is a perfect square.
+
+#### Solution:
+```javascript
+let isSquare = function (n) {
+  if (n < 0) return false;
+  return Number.isInteger(Math.sqrt(n));
+};
