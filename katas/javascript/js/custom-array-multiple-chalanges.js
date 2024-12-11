@@ -68,9 +68,38 @@ class myArray {
                 .join(' ')
     }
 
+    fizzBuzz(int){
+
+        for (let i = 1; i <= int; i++) {
+            if (i % 3 === 0 && i % 5 === 0) {
+                console.log('FizzBuzz')
+            } else if (i % 3 === 0) {
+                console.log('Fizz')
+            } else if (i % 5 === 0) {
+                console.log('Buzz')
+            } else {
+                console.log(i)
+            }
+        }
+    }
+    maxProfit(arr){
+    let minPrice = arr[0]
+        let maxProfit = 0;
+
+    for (let i = 1; i < arr.length; i++) {
+        const currentPrice = arr[i]
+
+        minPrice = Math.min(minPrice, currentPrice);
+
+        const potentialProfit = currentPrice - minPrice;
+
+        maxProfit = Math.max(maxProfit, potentialProfit);
+    }
+    return maxProfit;
+    }
 }
 
 const myNewArray = new myArray();
 
-console.log(myNewArray.capitalizeSentence('Hello world'));
-console.log(myNewArray);
+console.log(myNewArray.maxProfit([7,1,5,3,6,4]));
+
