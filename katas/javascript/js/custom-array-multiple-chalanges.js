@@ -62,9 +62,15 @@ class myArray {
         return parseInt(res) * Math.sign(int);
     }
 
+    capitalizeSentence(str){
+        return  str.split(' ')
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(' ')
+    }
+
 }
 
 const myNewArray = new myArray();
 
-console.log(myNewArray.reverseInt(-4456))
+console.log(myNewArray.capitalizeSentence('Hello world'));
 console.log(myNewArray);
