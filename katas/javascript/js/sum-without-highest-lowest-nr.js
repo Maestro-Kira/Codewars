@@ -25,11 +25,9 @@ If an empty value ( null, None, Nothing, nil etc. ) is given instead of an array
 
 
 function sumArray(array){
+    if (!Array.isArray(array) || array.length <= 2) {return 0}
+
     let arraySlice = array.sort((a, b) => a-b).slice(1, -1);
-    console.log(arraySlice);
-    if (!Array.isArray(array) || arraySlice.length <= 2) {
-        return 0
-    }
 
     return arraySlice.reduce((a, b) => a + b, 0)
 }
