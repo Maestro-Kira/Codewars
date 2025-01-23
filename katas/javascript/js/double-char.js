@@ -11,11 +11,7 @@ Good Luck!
 
 
 function doubleStr(str) {
-
-    return  str
-            .split('')
-            .map(char => {return char.repeat(2)})
-            .join('')
+    return  str.split('').map(char => char.repeat(2)).join('');
 }
 
 
